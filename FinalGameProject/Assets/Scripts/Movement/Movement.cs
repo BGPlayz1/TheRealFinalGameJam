@@ -4,7 +4,7 @@ using System.Security;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public ContactFilter2D movementFilter;
@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        movementInput.x = Input.GetAxisRaw("Horizontal");
+        movementInput.y = Input.GetAxisRaw("Vertical");
+
+
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
         animator.SetFloat("Speed", movementInput.sqrMagnitude);
