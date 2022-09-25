@@ -57,8 +57,46 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PerformPlayerMove()
     {
+        state = BattleState.Busy;
+
         var move = playerUnit.Character.Moves[currentMove];
         yield return dialogBox.TypeDialog($"{playerUnit.Character.Base.Name} used {move.Base.Name}");
+        yield return new WaitForSeconds(1);
+
+        bool isFainted = enemyUnit.Character.TakeDamage(move, playerUnit.Character);
+        enemyHud.UpdateHP();
+
+        if (isFainted)
+        {
+            yield return dialogBox.TypeDialog($"{enemyUnit.Character.Base.Name} Fainted");
+        }
+        else
+        {
+            StartCoroutine(EnemyMove());
+        }
+
+        IEnumerator EnemyMove()
+        {
+            state = BattleState.EnemyMove;
+
+            var move = enemyUnit.Character.GetRandomMove();
+
+            yield return dialogBox.TypeDialog($"{enemyUnit.Character.Base.Name} used {move.Base.Name}");
+            yield return new WaitForSeconds(1);
+
+            bool isFainted = playerUnit.Character.TakeDamage(move, enemyUnit.Character);
+            playerHud.UpdateHP();
+
+            if (isFainted)
+            {
+                yield return dialogBox.TypeDialog($"{playerUnit.Character.Base.Name} Fainted");
+            }
+            else
+            {
+                PlayerAction();
+            }
+        }
+
     }
 
     private void Update()

@@ -11,7 +11,12 @@ public class CharacterBase : ScriptableObject
     [TextArea]
     [SerializeField] string description;
 
-    [SerializeField] int health;
+    [SerializeField] int maxHp;
+    [SerializeField] int attack;
+    [SerializeField] int defense;
+    [SerializeField] int spAttack;
+    [SerializeField] int spDefense;
+    [SerializeField] int speed;
     [SerializeField] Sprite backSprite;
     [SerializeField] Sprite frontSprite;
 
@@ -23,15 +28,36 @@ public class CharacterBase : ScriptableObject
     {
         get { return name; }
     }
+    public int Defense
+    {
+        get { return defense; }
+    }
+    public int SpAttack
+    {
+        get { return spAttack; }
+    }
+    public int SpDefense
+    {
+        get { return spDefense; }
+    }
+    public int Speed
+    {
+        get { return speed; }
+    }
 
     public string Description
     {
         get { return description; }
     }
 
-    public int Health
+    public int Attack
     {
-        get { return health; }
+        get { return attack; }
+    }
+
+    public int MaxHp
+    {
+        get { return maxHp; }
     }
     public Sprite BackSprite
     {

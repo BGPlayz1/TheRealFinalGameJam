@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303abbecf76b1a040917a1f0382a5e61, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  name: 
+  name: Fireball
   description: 
   power: 70
   speed: 20
