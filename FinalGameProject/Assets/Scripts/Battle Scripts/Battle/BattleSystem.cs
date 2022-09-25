@@ -17,6 +17,7 @@ public class BattleSystem : MonoBehaviour
 
     BattleState state;
     int currentAction;
+    int currentMove;
 
     private void Start()
     {   
@@ -29,6 +30,8 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.Setup();
         playerHud.SetData(playerUnit.Character);
         enemyHud.SetData(enemyUnit.Character);
+
+        dialogBox.SetMoveNames(playerUnit.Character.Moves);
 
         yield return (dialogBox.TypeDialog($"{enemyUnit.Character.Base.Name} has challenged you to a battle."));
         yield return new WaitForSeconds(1);
@@ -44,11 +47,22 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableActionSelector(true);
     }
 
+    void PlayerMove()
+    {
+        state = BattleState.PlayerMove;
+        dialogBox.EnableActionSelector(false);
+        dialogBox.EnableDialogText(false);
+        dialogBox.EnableMoveSelector(true);
+    }
     private void Update()
     {
         if(state == BattleState.PlayerAction)
         {
             HandleActionSelection();
+        }
+        else if (state == BattleState.PlayerMove)
+        {
+            HandleMoveSelection();
         }
     }
 
@@ -66,8 +80,45 @@ public class BattleSystem : MonoBehaviour
                 --currentAction;
         }
 
+        dialogBox.UpdateActionSelection(currentAction);
 
+        if (Input.GetKeyDown(KeyCode.E))
+        if (currentAction == 0)
+        {
+                PlayerMove();
+        }
+        else if (currentAction == 0)
+        {
 
+        }
     }  
+
+   void HandleMoveSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (currentMove < playerUnit.Character.Moves.Count - 1)
+                ++currentMove;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (currentMove > 0)
+                --currentMove;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentMove < playerUnit.Character.Moves.Count - 2)
+                currentMove += 2;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (currentMove > 1)
+                currentMove -= 2;
+        }
+
+        dialogBox.UpdateMoveSelection(currentMove, playerUnit.Character.Moves[currentMove]);     
+    }
 
 }

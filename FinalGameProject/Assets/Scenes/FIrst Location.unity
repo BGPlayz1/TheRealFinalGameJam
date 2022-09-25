@@ -1062,19 +1062,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 1293089467}
-  highlightedColor: {r: 0, g: 0, b: 0, a: 0}
+  highlightedColor: {r: 1, g: 0.6784314, b: 0.20000002, a: 1}
   lettersPerSecond: 30
   actionSelector: {fileID: 1822877612}
   moveSelector: {fileID: 2004327851}
   moveDetails: {fileID: 47560591}
   actionTexts:
-  - {fileID: 387983296}
   - {fileID: 205798612}
+  - {fileID: 387983296}
   moveTexts:
+  - {fileID: 1510081900}
+  - {fileID: 1967439236}
   - {fileID: 1592853539}
   - {fileID: 1023544156}
-  - {fileID: 1967439236}
-  - {fileID: 1510081900}
   attackText: {fileID: 1782064339}
   SpeedText: {fileID: 2006089797}
 --- !u!1 &519420028

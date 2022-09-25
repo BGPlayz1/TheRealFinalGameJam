@@ -56,7 +56,34 @@ public class BattleDialogBox : MonoBehaviour
             if (i == selectedAction)
                 actionTexts[i].color = highlightedColor;
             else
-                actionTexts[i].color = Color.black;
+                actionTexts[i].color = Color.white;
+        }
+    }
+
+
+    public void UpdateMoveSelection(int selectedMove, Move move)
+    {
+        for (int i=0; i<moveTexts.Count; ++i)
+        {
+            if (i == selectedMove)
+                moveTexts[i].color = highlightedColor;
+            else 
+                moveTexts[i].color = Color.white;
+        }
+
+        attackText.text = $"Attack {move.Base.Power}";
+        SpeedText.text = $"Speed {move.Base.Speed}";
+    }
+
+
+    public void SetMoveNames(List<Move> moves)
+    {
+        for (int i = 0; i < moveTexts.Count; ++i)
+        {
+            if (i < moves.Count)
+                moveTexts[i].text = moves[i].Base.name;
+            else
+                moveTexts[i].text = "-";
         }
     }
 }

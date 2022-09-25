@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb329ae5d17dfd4890ca1317e85b06e, type: 3}
   m_Name: Main Player
   m_EditorClassIdentifier: 
-  name: Player
+  name: Quinn
   description: 
   health: 100
   backSprite: {fileID: 21300000, guid: 169863deb46722e47a950ed21920ea1b, type: 3}
