@@ -54,6 +54,13 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableDialogText(false);
         dialogBox.EnableMoveSelector(true);
     }
+
+    IEnumerator PerformPlayerMove()
+    {
+        var move = playerUnit.Character.Moves[currentMove];
+        yield return dialogBox.TypeDialog($"{playerUnit.Character.Base.Name} used {move.Base.Name}");
+    }
+
     private void Update()
     {
         if(state == BattleState.PlayerAction)
@@ -119,6 +126,14 @@ public class BattleSystem : MonoBehaviour
         }
 
         dialogBox.UpdateMoveSelection(currentMove, playerUnit.Character.Moves[currentMove]);     
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            dialogBox.EnableMoveSelector(false);
+            dialogBox.EnableDialogText(true);
+            StartCoroutine(PerformPlayerMove());
+
+        }
     }
 
 }
