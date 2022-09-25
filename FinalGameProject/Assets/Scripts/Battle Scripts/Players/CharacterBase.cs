@@ -14,7 +14,7 @@ public class CharacterBase : ScriptableObject
     [SerializeField] int health;
     [SerializeField] Sprite sprite;
 
-    public bool obtainedSword = false;
+
 
 
     [SerializeField] List<ObtainableWeapon> obtainableWeapons;
@@ -37,14 +37,6 @@ public class CharacterBase : ScriptableObject
         get { return sprite; }
     }
 
-    public bool ObtainedSword
-    {
-        get { return obtainedSword; }
-        set
-        {
-            obtainedSword = value;
-        }
-    }
 
 
 
@@ -57,6 +49,21 @@ public class CharacterBase : ScriptableObject
 
     [System.Serializable]
 
-    public class ObtainableWeapon { }
+    public class ObtainableWeapon
+    {
+        [SerializeField] MoveBase moveBase;
+        [SerializeField] int level;
+
+        public int Level
+        {
+            get { return level; }
+        }
+
+        public MoveBase Base
+        {
+            get { return moveBase ; }
+        }
+    }
+
 
 }
