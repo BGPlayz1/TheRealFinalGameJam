@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: dbb329ae5d17dfd4890ca1317e85b06e, type: 3}
   m_Name: Main Player
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterProfile
-  name: Player
+  m_EditorClassIdentifier: 
+  name: 
   description: 
-  health: 100
-  sprite: {fileID: 21300000, guid: f4c212edf607f1f48b2f134c6fa5ae16, type: 3}
-  obtainedSword: 0
+  health: 0
+  backSprite: {fileID: 0}
+  frontSprite: {fileID: 0}
   obtainableWeapons: []

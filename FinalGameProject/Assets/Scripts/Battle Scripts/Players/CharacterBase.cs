@@ -12,7 +12,8 @@ public class CharacterBase : ScriptableObject
     [SerializeField] string description;
 
     [SerializeField] int health;
-    [SerializeField] Sprite sprite;
+    [SerializeField] Sprite backSprite;
+    [SerializeField] Sprite frontSprite;
 
 
 
@@ -32,10 +33,15 @@ public class CharacterBase : ScriptableObject
     {
         get { return health; }
     }
-    public Sprite Sprite
+    public Sprite BackSprite
     {
-        get { return sprite; }
+        get { return backSprite; }
     }
+    public Sprite FrontSprite
+    {
+        get { return frontSprite; }
+    }
+
 
 
 
