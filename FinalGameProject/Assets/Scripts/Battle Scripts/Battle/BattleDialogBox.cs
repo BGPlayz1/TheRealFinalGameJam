@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleDialogBox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Text dialogText;
 
-    // Update is called once per frame
-    void Update()
+    public void setDialog(string dialog)
     {
-        
+        dialogText.text = dialog;
     }
 }
