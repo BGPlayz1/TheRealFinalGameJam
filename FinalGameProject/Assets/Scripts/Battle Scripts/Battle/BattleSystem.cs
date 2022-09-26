@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy}
 
@@ -14,15 +14,41 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
-    Character character;
+
+    public event Action<bool> OnBattleOver;
+
+    public Button WinFightButton;
+    public Button LoseFightButton;
+
+
+    public void OnWinningFight()
+    {
+        WinFightButton.gameObject.SetActive(true);
+    }
+    public void OnLosingFight()
+    {
+        LoseFightButton.gameObject.SetActive(true);
+    }
+
+    public void ShowButton(bool win)
+    {
+        if (win)
+        {
+            OnWinningFight();
+        }
+        else
+            OnLosingFight();
+        
+    }
 
     BattleState state;
     int currentAction;
     int currentMove;
 
-    private void Start()
+    private void Awake()
     {   
         StartCoroutine (SetupBattle());
+        OnBattleOver += ShowButton;
     }
 
     public IEnumerator SetupBattle()
@@ -71,6 +97,9 @@ public class BattleSystem : MonoBehaviour
         if (isFainted)
         {
             yield return dialogBox.TypeDialog($"{enemyUnit.Character.Base.Name} Fainted");
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -92,6 +121,8 @@ public class BattleSystem : MonoBehaviour
             if (isFainted)
             {
                 yield return dialogBox.TypeDialog($"{playerUnit.Character.Base.Name} Fainted");
+
+                OnBattleOver(false);
             }
             else
             {

@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbb329ae5d17dfd4890ca1317e85b06e, type: 3}
-  m_Name: Golem
+  m_Name: Evil Tree
   m_EditorClassIdentifier: 
-  name: Golem
+  name: 
   description: 
-  maxHp: 300
-  attack: 10
-  defense: 5
-  spAttack: 5
-  spDefense: 5
-  speed: 5
-  backSprite: {fileID: 21300000, guid: 40cb6400da75aac4d899d0bd985ead77, type: 3}
-  frontSprite: {fileID: 21300000, guid: 40cb6400da75aac4d899d0bd985ead77, type: 3}
-  obtainableWeapons:
-  - moveBase: {fileID: 11400000, guid: 30cc4f07a89a5ae4db98459333b97e86, type: 2}
-    level: 1
+  maxHp: 0
+  attack: 0
+  defense: 0
+  spAttack: 0
+  spDefense: 0
+  speed: 0
+  backSprite: {fileID: 0}
+  frontSprite: {fileID: 0}
+  obtainableWeapons: []

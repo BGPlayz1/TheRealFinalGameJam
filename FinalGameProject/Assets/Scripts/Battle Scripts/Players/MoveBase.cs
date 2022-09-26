@@ -15,6 +15,7 @@ public class MoveBase : ScriptableObject
     [SerializeField] int speed;
 
 
+
     public string Name
     {
         get { return name; }
