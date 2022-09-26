@@ -14,6 +14,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
+    Character character;
 
     BattleState state;
     int currentAction;
@@ -29,7 +30,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Setup();
         enemyUnit.Setup();
         playerHud.SetData(playerUnit.Character);
-        enemyHud.SetData(enemyUnit.Character);
+        enemyHud.SetData(enemyUnit.Character);  
 
         dialogBox.SetMoveNames(playerUnit.Character.Moves);
 
@@ -43,6 +44,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
+        Debug.Log($"Your new hp is {playerUnit.Character.HP}");
         StartCoroutine(dialogBox.TypeDialog("Choose an action"));
         dialogBox.EnableActionSelector(true);
     }
@@ -64,7 +66,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         bool isFainted = enemyUnit.Character.TakeDamage(move, playerUnit.Character);
-        enemyHud.UpdateHP();
+        enemyHud.UpdateHP(enemyUnit.Character);
 
         if (isFainted)
         {
@@ -85,7 +87,7 @@ public class BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(1);
 
             bool isFainted = playerUnit.Character.TakeDamage(move, enemyUnit.Character);
-            playerHud.UpdateHP();
+            playerHud.UpdateHP(playerUnit.Character);
 
             if (isFainted)
             {

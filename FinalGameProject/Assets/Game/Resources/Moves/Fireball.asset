@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fireball
   description: 
-  power: 70
+  power: 2000
   speed: 20

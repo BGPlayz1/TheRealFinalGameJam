@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Quinn
   description: 
-  health: 100
+  maxHp: 100
+  attack: 20
+  defense: 20
+  spAttack: 20
+  spDefense: 20
+  speed: 20
   backSprite: {fileID: 21300000, guid: 169863deb46722e47a950ed21920ea1b, type: 3}
   frontSprite: {fileID: 21300000, guid: 169863deb46722e47a950ed21920ea1b, type: 3}
   obtainableWeapons:
