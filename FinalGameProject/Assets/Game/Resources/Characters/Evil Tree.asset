@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb329ae5d17dfd4890ca1317e85b06e, type: 3}
+  m_Name: Evil Tree
+  m_EditorClassIdentifier: 
+  name: Evil Tree
+  description: 
+  maxHp: 350
+  attack: 20
+  defense: 1
+  spAttack: 1
+  spDefense: 1
+  speed: 1
+  backSprite: {fileID: 21300000, guid: cbb8e334d51a51e43886bffecbfeeb45, type: 3}
+  frontSprite: {fileID: 21300000, guid: cbb8e334d51a51e43886bffecbfeeb45, type: 3}
+  obtainableWeapons:
+  - moveBase: {fileID: 11400000, guid: 13127099ea9f24742b9fcca635bfe297, type: 2}
+    level: 0
+  - moveBase: {fileID: 11400000, guid: 37bf55476ca1f874da662321c7f1b758, type: 2}
+    level: 0
