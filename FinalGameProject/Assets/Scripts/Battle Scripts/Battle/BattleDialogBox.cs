@@ -16,7 +16,7 @@ public class BattleDialogBox : MonoBehaviour
     [SerializeField] List<Text> moveTexts;
 
     [SerializeField] Text attackText;
-    [SerializeField] Text SpeedText;
+
 
     public void SetDialog(string dialog)
     {
@@ -72,7 +72,6 @@ public class BattleDialogBox : MonoBehaviour
         }
 
         attackText.text = $"Attack {move.Base.Power}";
-        SpeedText.text = $"Speed {move.Base.Speed}";
     }
 
 

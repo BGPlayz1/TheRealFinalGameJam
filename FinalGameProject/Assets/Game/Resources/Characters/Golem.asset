@@ -25,3 +25,5 @@ MonoBehaviour:
   obtainableWeapons:
   - moveBase: {fileID: 11400000, guid: 30cc4f07a89a5ae4db98459333b97e86, type: 2}
     level: 1
+  - moveBase: {fileID: 11400000, guid: e9470eb71927d82439f1a3bf0d6ddc74, type: 2}
+    level: 1

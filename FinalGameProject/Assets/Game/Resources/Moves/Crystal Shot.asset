@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Crystal Shot
   description: 
   power: 500
-  speed: 100
+  speed: 50
