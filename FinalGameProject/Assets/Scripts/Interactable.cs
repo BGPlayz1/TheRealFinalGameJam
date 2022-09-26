@@ -26,6 +26,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            collision.gameObject.GetComponent<PlayerManager>().NotifyPlayer();
             Debug.Log("Player Now In Range");
         }
     }
@@ -34,6 +35,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
+            collision.gameObject.GetComponent<PlayerManager>().DeNotifyPlayer();
             Debug.Log("Player Now Not In Range");
         }
     }
