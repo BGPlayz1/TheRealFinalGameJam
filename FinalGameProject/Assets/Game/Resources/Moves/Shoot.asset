@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shoot
   description: 
-  power: 1300
+  power: 1700
   speed: 50
