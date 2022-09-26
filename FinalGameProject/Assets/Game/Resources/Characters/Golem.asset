@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Golem
   description: 
-  health: 100
+  maxHp: 300
+  attack: 10
+  defense: 5
+  spAttack: 5
+  spDefense: 5
+  speed: 5
   backSprite: {fileID: 21300000, guid: 40cb6400da75aac4d899d0bd985ead77, type: 3}
   frontSprite: {fileID: 21300000, guid: 40cb6400da75aac4d899d0bd985ead77, type: 3}
   obtainableWeapons:
-  - moveBase: {fileID: 11400000, guid: 4248041e7188ec54d8386e37dc474d50, type: 2}
+  - moveBase: {fileID: 11400000, guid: 30cc4f07a89a5ae4db98459333b97e86, type: 2}
     level: 1

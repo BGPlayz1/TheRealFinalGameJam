@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public enum BattleState { Start, PlayerAction, PlayerMove, EnemyMove, Busy}
 
@@ -15,13 +15,40 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleDialogBox dialogBox;
 
+    public event Action<bool> OnBattleOver;
+
+    public Button WinFightButton;
+    public Button LoseFightButton;
+
+
+    public void OnWinningFight()
+    {
+        WinFightButton.gameObject.SetActive(true);
+    }
+    public void OnLosingFight()
+    {
+        LoseFightButton.gameObject.SetActive(true);
+    }
+
+    public void ShowButton(bool win)
+    {
+        if (win)
+        {
+            OnWinningFight();
+        }
+        else
+            OnLosingFight();
+        
+    }
+
     BattleState state;
     int currentAction;
     int currentMove;
 
-    private void Start()
+    private void Awake()
     {   
         StartCoroutine (SetupBattle());
+        OnBattleOver += ShowButton;
     }
 
     public IEnumerator SetupBattle()
@@ -29,7 +56,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.Setup();
         enemyUnit.Setup();
         playerHud.SetData(playerUnit.Character);
-        enemyHud.SetData(enemyUnit.Character);
+        enemyHud.SetData(enemyUnit.Character);  
 
         dialogBox.SetMoveNames(playerUnit.Character.Moves);
 
@@ -43,6 +70,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerAction()
     {
         state = BattleState.PlayerAction;
+        Debug.Log($"Your new hp is {playerUnit.Character.HP}");
         StartCoroutine(dialogBox.TypeDialog("Choose an action"));
         dialogBox.EnableActionSelector(true);
     }
@@ -64,11 +92,14 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         bool isFainted = enemyUnit.Character.TakeDamage(move, playerUnit.Character);
-        enemyHud.UpdateHP();
+        enemyHud.UpdateHP(enemyUnit.Character);
 
         if (isFainted)
         {
             yield return dialogBox.TypeDialog($"{enemyUnit.Character.Base.Name} Fainted");
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -85,11 +116,13 @@ public class BattleSystem : MonoBehaviour
             yield return new WaitForSeconds(1);
 
             bool isFainted = playerUnit.Character.TakeDamage(move, enemyUnit.Character);
-            playerHud.UpdateHP();
+            playerHud.UpdateHP(playerUnit.Character);
 
             if (isFainted)
             {
                 yield return dialogBox.TypeDialog($"{playerUnit.Character.Base.Name} Fainted");
+
+                OnBattleOver(false);
             }
             else
             {

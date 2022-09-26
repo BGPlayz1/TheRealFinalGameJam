@@ -20,17 +20,9 @@ public class BattleHud : MonoBehaviour
         hpBar.SetHP((float) character.HP / character.Base.MaxHp);
     }
         
-    public void UpdateHP()
+    public void UpdateHP(Character character)
     {
-        if (_character == null)
-
-        {
-
-            Debug.LogError("_character is null!");
-
-            return;
-
-        }
-        hpBar.SetHP((float) _character.HP / _character.Base.MaxHp);
+       
+        hpBar.SetHP((float) character.HP / character.Base.MaxHp);
     }
 }

@@ -19,11 +19,12 @@ public class Character
         HP = Base.MaxHp;
             
         Moves = new List<Move>();
+        Debug.Log($"Your maxHP is {Base.MaxHp}");
         foreach (var move in Base.ObtainableWeapons)
         {
             if (move.Level <= Level)
                 Moves.Add(new Move(move.Base));
-            Debug.Log($"Your maxHP is {Base.MaxHp}");
+            
         }
     }
 
@@ -57,8 +58,7 @@ public class Character
     public bool TakeDamage(Move move, Character attacker)   
     {
         float modifiers = Random.Range(0.85f, 1f);
-        float a = (2 * attacker.Level + 10) / 250f;
-
+        float a = (2 * attacker.Level + 10) / 250f;          
         float d = a * move.Base.Power * ((float)attacker.Attack / Defense) + 2;
         int damage = Mathf.FloorToInt(d * modifiers);
 
