@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Slash
   description: 
-  power: 50
+  power: 1500
   speed: 20
