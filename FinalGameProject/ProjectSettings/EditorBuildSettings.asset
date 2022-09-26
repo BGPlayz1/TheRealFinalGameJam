@@ -18,6 +18,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Maze.unity
     guid: d29444196a4b2a3448dbcf4f27796c0a
   - enabled: 1
-    path: Assets/Scenes/Hub.unity
+    path: Assets/Scenes/Bunny Fight.unity
+    guid: 12b3a0df63cfd5b44a3a08d01c15bac1
+  - enabled: 1
+    path: Assets/Scenes/MazeAfterFight.unity
+    guid: 1f0a92621d604404c9e107b0e8f6918f
+  - enabled: 1
+    path: Assets/Scenes/Hub1stBoss.unity
     guid: 574f60e2b7b3cc342894462271b56798
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: b349d3d9eb83dd9479f048b69f31b407
+  - enabled: 1
+    path: Assets/Scenes/Tree fight.unity
+    guid: b67ce9eb9c1476c4eb5acfd8b39606f8
+  - enabled: 1
+    path: Assets/Scenes/Hub2ndBoss.unity
+    guid: 759e8e95b4182ab44b9ad359ba48e9ab
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: bc87e3193e0b77b449d0700e9373d831
+  - enabled: 1
+    path: Assets/Scenes/Golem Fight.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HubMainBoss.unity
+    guid: cf011f15d3d65a94aab1d649e72b16bf
+  - enabled: 1
+    path: Assets/Scenes/Castle.unity
+    guid: 20fe1a396b92a0a42bfb666ce8e99602
+  - enabled: 1
+    path: Assets/Scenes/Dad fight.unity
+    guid: afdf02e09a610c047912b823fb5a47c8
   m_configObjects: {}
