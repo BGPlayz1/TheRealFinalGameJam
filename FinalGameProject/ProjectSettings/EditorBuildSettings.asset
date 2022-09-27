@@ -51,9 +51,15 @@ EditorBuildSettings:
     path: Assets/Scenes/HubMainBoss.unity
     guid: cf011f15d3d65a94aab1d649e72b16bf
   - enabled: 1
+    path: Assets/Scenes/DialogueWithDad.unity
+    guid: 94bc7f62dca706a489e41c3eec261736
+  - enabled: 1
     path: Assets/Scenes/Castle.unity
     guid: 20fe1a396b92a0a42bfb666ce8e99602
   - enabled: 1
     path: Assets/Scenes/Dad fight.unity
     guid: afdf02e09a610c047912b823fb5a47c8
+  - enabled: 1
+    path: Assets/Scenes/ChatWithDadAfterFight.unity
+    guid: e7a4a5e96d3fc644e8671f2b7d198ccf
   m_configObjects: {}
