@@ -1139,7 +1139,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Cursed King: So you have finally arrived. I''ve been waiting for you.
-    How Julia doing these days? *smirk*'
+    How is your mom doing these days? *smirk*'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
   m_sharedMaterial: {fileID: 5789973159713511197, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}

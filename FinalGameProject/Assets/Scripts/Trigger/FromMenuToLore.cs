@@ -13,5 +13,16 @@ public class FromMenuToLore: MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
+    public void Menu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 19);
+    }
+    public void JoinEnd()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +2);
+    }
+    public void ToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 20);
+    }
 }

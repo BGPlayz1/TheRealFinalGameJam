@@ -1194,7 +1194,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 380609465}
+      - m_Target: {fileID: 1894456659}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -34979,7 +34979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574522230}
   m_Layer: 5
-  m_Name: 4thlineJoin
+  m_Name: 4thlineKill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35674,7 +35674,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cursed Lord: Please Quinn spare me and join my forces'
+  m_text: 'Cursed Lord: Wait, I can make you so much stronger if you join me, all
+    this power over everything.The crystals, the trees, the entire land can be your.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
   m_sharedMaterial: {fileID: 5789973159713511197, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
@@ -35902,9 +35905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quinn: Alright Father, let us rule this cursed land together.
-
-'
+  m_text: 'Cursed Lord: Wonderful choice.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
   m_sharedMaterial: {fileID: 5789973159713511197, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
@@ -36067,7 +36068,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1829919322}
         m_TargetAssemblyTypeName: FromMenuToLore, Assembly-CSharp
-        m_MethodName: playGame
+        m_MethodName: JoinEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38063,10 +38064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quinn: I''m sorry Father, but I must put and end to this curse.
-
-
-'
+  m_text: 'Quinn: Never.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
   m_sharedMaterial: {fileID: 5789973159713511197, guid: 99891a4a8ab9eed4fa3ce39b793cc5cc, type: 2}
@@ -43200,7 +43198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812128423}
   m_Layer: 5
-  m_Name: 4thlineKill
+  m_Name: 4thlineJoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
