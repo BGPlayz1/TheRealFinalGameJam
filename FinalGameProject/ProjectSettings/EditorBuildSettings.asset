@@ -63,9 +63,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ChatWithDadAfterFight.unity
     guid: e7a4a5e96d3fc644e8671f2b7d198ccf
   - enabled: 1
-    path: Assets/Scenes/KillingEnding.unity
+    path: Assets/Scenes/joinend.unity
     guid: 3131bc882538e58448093ab7088bce8d
   - enabled: 1
-    path: Assets/Scenes/JoinEnd.unity
+    path: Assets/Scenes/Killend.unity
     guid: 1a10f950780984e46b820e44613afee7
   m_configObjects: {}
